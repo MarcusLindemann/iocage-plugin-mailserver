@@ -8,6 +8,11 @@
 cd /usr/local/etc/dovecot
 cp -r example-config/* .
 
+# disable SSL to simplify installation
+for i in "*"; do
+    sed -i "" '/°ssl/s/^/#/' $i
+done
+
 # enable dovecot at system (jail) start and start it first time
 sysrc dovecot_enable=YES
 service dovecot start
