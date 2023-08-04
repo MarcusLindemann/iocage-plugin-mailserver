@@ -9,7 +9,7 @@ cd /usr/local/etc/dovecot
 cp -r example-config/* .
 
 # disable SSL to simplify installation
-for i in "*"; do
+for i in "* conf.d/*"; do
     sed -i "" '/°ssl/s/^/#/' $i
 done
 
